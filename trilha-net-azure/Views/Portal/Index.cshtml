@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.IncludeHeader = true;
+    ViewBag.IncludeFooter = true;
+}
+<section class="h-full flex-grow p-4">
+    <!-- Main Content -->
+
+    <div class="mx-auto max-w-7xl">
+        <!-- Overview Cards -->
+        <div class="grid-cols-1 mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded bg-amber-300 p-4 text-white shadow">
+                <h3 class="text-lg font-semibold">Total Employees</h3>
+                <p class="text-3xl font-bold">120</p>
+            </div>
+            <div class="rounded bg-gray-100 p-4 shadow">
+                <h3 class="text-lg font-semibold">New Hires (This Month)</h3>
+                <p class="text-3xl font-bold text-amber-300">8</p>
+            </div>
+            <div class="rounded bg-gray-100 p-4 shadow">
+                <h3 class="text-lg font-semibold">Departments</h3>
+                <p class="text-3xl font-bold text-amber-300">5</p>
+            </div>
+            <div class="rounded bg-gray-100 p-4 shadow">
+                <h3 class="text-lg font-semibold">Pending Approvals</h3>
+                <p class="text-3xl font-bold text-red-500">3</p>
+            </div>
+        </div>
+
+        <!-- Recent Employees Table -->
+        <div class="overflow-hidden rounded-lg bg-white shadow">
+            <div class="flex items-center justify-between p-4">
+                <h2 class="text-lg font-semibold">Recent Employees</h2>
+                <button class="rounded bg-amber-300 px-4 py-2 font-normal uppercase text-black shadow hover:bg-amber-400">See All</button>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2 text-left">#</th>
+                            <th class="px-4 py-2 text-left">Name</th>
+                            <th class="px-4 py-2 text-left">Position</th>
+                            <th class="px-4 py-2 text-left">Department</th>
+                            <th class="px-4 py-2 text-left">Start Date</th>
+                            <th class="px-4 py-2 text-left">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-4 py-2">1</td>
+                            <td class="px-4 py-2">John Doe</td>
+                            <td class="px-4 py-2">Software Engineer</td>
+                            <td class="px-4 py-2">IT</td>
+                            <td class="px-4 py-2">2023-12-01</td>
+                            <td class="px-4 py-2">
+                                <button class="text-blue-500 hover:underline">Edit</button>
+                                <button class="ml-2 text-red-500 hover:underline">Delete</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-4 py-2">2</td>
+                            <td class="px-4 py-2">Jane Smith</td>
+                            <td class="px-4 py-2">HR Manager</td>
+                            <td class="px-4 py-2">Human Resources</td>
+                            <td class="px-4 py-2">2024-01-15</td>
+                            <td class="px-4 py-2">
+                                <button class="text-blue-500 hover:underline">Edit</button>
+                                <button class="ml-2 text-red-500 hover:underline">Delete</button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-4 py-2">3</td>
+                            <td class="px-4 py-2">Michael Brown</td>
+                            <td class="px-4 py-2">Product Manager</td>
+                            <td class="px-4 py-2">Marketing</td>
+                            <td class="px-4 py-2">2023-11-20</td>
+                            <td class="px-4 py-2">
+                                <button class="text-blue-500 hover:underline">Edit</button>
+                                <button class="ml-2 text-red-500 hover:underline">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</section>

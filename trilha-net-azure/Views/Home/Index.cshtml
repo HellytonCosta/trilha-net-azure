@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.IncludeHeader = false;
+    ViewBag.IncludeFooter = false;
+}
+<div class="flex h-lvh">
+    <div class="flex-1 mx-auto rounded-lg bg-white px-6 py-12">
+        <!-- Hero Section -->
+        <section class="m-auto mb-8 max-w-2xl text-center">
+            <h2 class="mb-4 text-4xl font-bold text-gray-900">Simplify Employee Management</h2>
+            <p class="mb-6 text-xl text-gray-700">With HR Master, you can easily manage your company's workforce. Add, update, and track employee information effortlessly.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="mb-12">
+            <h3 class="mb-6 text-center text-3xl font-bold text-gray-900">Features</h3>
+            <div class="grid-cols-1 grid h-52 gap-6 md:grid-cols-3">
+                <div class="rounded-lg bg-gray-50 p-6 shadow-md">
+                    <h4 class="mb-2 text-center text-2xl font-semibold text-gray-800">Employee Records</h4>
+                    <p class="text-xl text-gray-600">Store and manage all employee data in one secure place.</p>
+                </div>
+                <div class="rounded-lg bg-gray-50 p-6 shadow-md">
+                    <h4 class="mb-2 text-center text-2xl font-semibold text-gray-800">Analytics</h4>
+                    <p class="text-xl text-gray-600">Gain insights into your workforce with detailed analytics.</p>
+                </div>
+                <div class="rounded-lg bg-gray-50 p-6 text-center shadow-md">
+                    <h4 class="mb-2 text-2xl font-semibold text-gray-800">Easy Integration</h4>
+                    <p class="text-xl text-gray-600">Integrate seamlessly with your existing tools and systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="mb-12">
+            <h3 class="mb-6 text-center text-4xl font-bold text-gray-900">About HR Master</h3>
+            <p class="text-center text-xl text-gray-700">HR Master is designed to simplify the complex process of employee management. Our mission is to empower companies to focus on growth while we handle the details of HR management.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="hidden" id="contact">
+            <h3 class="mb-6 text-center text-3xl font-bold text-gray-900">Get in Touch</h3>
+            <form class="mx-auto max-w-lg rounded-lg bg-gray-50 p-6 shadow-md">
+                <div class="mb-4">
+                    <label for="name" class="mb-2 block font-semibold text-gray-700">Name</label>
+                    <input type="text" id="name" class="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring focus:ring-amber-300">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="mb-2 block font-semibold text-gray-700">Email</label>
+                    <input type="email" id="email" class="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring focus:ring-amber-300">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="mb-2 block font-semibold text-gray-700">Message</label>
+                    <textarea id="message" rows="4" class="w-full rounded-lg border px-4 py-2 focus:outline-none focus:ring focus:ring-amber-300"></textarea>
+                </div>
+                <button type="submit" class="w-full rounded-lg bg-amber-300 px-4 py-2 font-semibold text-gray-900 hover:bg-amber-400">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <div class="flex-1 content-center bg-gradient-to-r from-amber-300 to-amber-400">
+        <form  asp-action="Index" asp-controller="Portal">
+            <section class="m-auto w-96">
+                <h3 class="mb-5 text-center text-3xl font-bold text-black">Already have a login?</h3>
+                <label class="mb-4 px-2 text-lg">Email</label>
+                <input type="email" class="mb-3 w-full rounded-lg bg-white p-3"/>
+                <label class="mb-4 px-2 text-lg">Password</label>
+                <input type="password" class="mb-6 w-full rounded-lg bg-white p-3"/>
+                <button class="w-full rounded-lg bg-black px-6 py-3 text-lg font-semibold text-white transition ease-in-out hover:bg-amber-500 hover:text-black">Login</button>
+            </section>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HR Master</title>
+    
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true" />
+    
+</head>
+<body data-theme="dark" class="flex min-h-screen flex-col bg-white text-black transition-colors dark:text-black dark:bg-gray-200">
+    <header>
+        @if(ViewBag.IncludeHeader)
+        {
+            <nav class="bg-amber-300 px-20 py-4">
+                <div class="flex gap-7">
+                    <a class="flex content-center gap-2" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/images/icons/HR.svg" class="m-auto size-8 flex-none" style="" />
+                        
+                    </a>
+                    <div class="flex-grow content-center">
+                        <ul class="flex gap-5">
+                            <li class="">
+                                <a class="text-lg text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="">
+                                <a class="text-lg" asp-area="" asp-controller="Home" asp-action="Index">Funcionários</a>
+                            </li>
+                            <li class="">
+                                <a class="text-lg" asp-area="" asp-controller="Home" asp-action="Index">Histórico</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 text-end">
+                        <button id="theme-toggle" class="rounded bg-gray-200 px-4 py-2 text-black dark:bg-gray-700 dark:text-white">
+                            Alternar Tema
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        }
+    </header>
+    
+    <main role="main" class="flex-grow">
+        @RenderBody()
+    </main>
+    
+    @if (ViewBag.IncludeFooter)
+    {
+        <footer class="bg-amber-300 px-20 py-4">
+            <div class="text-center">
+                &copy; 2025 - HR Master - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/themeMode.js" defer asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+
+</html>
