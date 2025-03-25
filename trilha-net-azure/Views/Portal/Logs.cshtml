@@ -1,0 +1,44 @@
+﻿@model List<trilha_net_azure.Models.DbHrContext.Log>
+@{
+    ViewData["Title"] = "Logs Page";
+    ViewBag.IncludeHeader = true;
+    ViewBag.IncludeFooter = true;
+}
+<section class="h-full flex-grow p-4">
+    <!-- Main Content -->
+
+    <div class="mx-auto max-w-7xl">
+      
+        <!-- Recent Employees Table -->
+        <div class="overflow-hidden rounded-lg bg-white shadow">
+            <div class="flex items-center justify-between p-4">
+                <h2 class="text-lg font-semibold">Logs</h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2 text-left">#</th>
+                            <th class="px-4 py-2 text-left">Action</th>
+                            <th class="px-4 py-2 text-left">Property</th>
+                            <th class="px-4 py-2 text-left">Time Stamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model)
+                        {
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">@item.Id</td>
+                                <td class="px-4 py-2">@item.Action</td>
+                                <td class="px-4 py-2">@item.MyProperty</td>
+                                <td class="px-4 py-2">@item.Timestamp.ToString("dd/MM/yyyy HH:mm tt")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</section>

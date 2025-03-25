@@ -22,17 +22,14 @@
                     <div class="flex-grow content-center">
                         <ul class="flex gap-5">
                             <li class="">
-                                <a class="text-lg text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="text-lg hover:text-yellow-500" asp-controller="Portal" asp-action="AuxHome">Home</a>
                             </li>
                             <li class="">
-                                <a class="text-lg" asp-area="" asp-controller="Home" asp-action="Index">Funcionários</a>
-                            </li>
-                            <li class="">
-                                <a class="text-lg" asp-area="" asp-controller="Home" asp-action="Index">Histórico</a>
+                                <a class="text-lg" asp-controller="Portal" asp-action="Logs">Histórico</a>
                             </li>
                         </ul>
                     </div>
-                    <div class="flex-1 text-end">
+                    <div class="flex-1 hidden text-end">
                         <button id="theme-toggle" class="rounded bg-gray-200 px-4 py-2 text-black dark:bg-gray-700 dark:text-white">
                             Alternar Tema
                         </button>

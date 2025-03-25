@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<trilha_net_azure.Models.DbHrContext.Employee>
+@{
     ViewData["Title"] = "Home Page";
     ViewBag.IncludeHeader = true;
     ViewBag.IncludeFooter = true;
@@ -31,7 +32,11 @@
         <div class="overflow-hidden rounded-lg bg-white shadow">
             <div class="flex items-center justify-between p-4">
                 <h2 class="text-lg font-semibold">Recent Employees</h2>
-                <button class="rounded bg-amber-300 px-4 py-2 font-normal uppercase text-black shadow hover:bg-amber-400">See All</button>
+                <div class="flex gap-2">
+                    <a href="~/Portal/CreateEmployee" class="cursor-pointer rounded bg-amber-300 px-4 py-2 font-normal uppercase text-black shadow hover:bg-amber-400">
+                        Add Employee
+                    </a>
+                </div>
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full border-collapse">
@@ -46,43 +51,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="hidden hover:bg-gray-50">
                             <td class="px-4 py-2">1</td>
                             <td class="px-4 py-2">John Doe</td>
                             <td class="px-4 py-2">Software Engineer</td>
                             <td class="px-4 py-2">IT</td>
                             <td class="px-4 py-2">2023-12-01</td>
                             <td class="px-4 py-2">
-                                <button class="text-blue-500 hover:underline">Edit</button>
-                                <button class="ml-2 text-red-500 hover:underline">Delete</button>
+                                <button class="cursor-pointer text-blue-500 hover:underline">Edit</button>
+                                <button class="ml-2 cursor-pointer text-red-500 hover:underline">Delete</button>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">2</td>
-                            <td class="px-4 py-2">Jane Smith</td>
-                            <td class="px-4 py-2">HR Manager</td>
-                            <td class="px-4 py-2">Human Resources</td>
-                            <td class="px-4 py-2">2024-01-15</td>
-                            <td class="px-4 py-2">
-                                <button class="text-blue-500 hover:underline">Edit</button>
-                                <button class="ml-2 text-red-500 hover:underline">Delete</button>
-                            </td>
-                        </tr>
-                        <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2">3</td>
-                            <td class="px-4 py-2">Michael Brown</td>
-                            <td class="px-4 py-2">Product Manager</td>
-                            <td class="px-4 py-2">Marketing</td>
-                            <td class="px-4 py-2">2023-11-20</td>
-                            <td class="px-4 py-2">
-                                <button class="text-blue-500 hover:underline">Edit</button>
-                                <button class="ml-2 text-red-500 hover:underline">Delete</button>
-                            </td>
-                        </tr>
+                        @foreach(var item in Model)
+                        {
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2">@item.Id</td>
+                                <td class="px-4 py-2">@item.Name</td>
+                                <td class="px-4 py-2">@item.Address</td>
+                                <td class="px-4 py-2">@item.Department</td>
+                                <td class="px-4 py-2">@item.AdmissionDate</td>
+                                <td class="flex gap-2 px-4 py-2">
+                                    <a href="./Portal/EditEmployee?Id=@item.Id" class="">
+                                        <p class="cursor-pointer text-blue-500 hover:underline">Edit</p>
+                                    </a>
+                                    <a href="./Portal/DeleteEmployee?Id=@item.Id">
+                                        <input type="hidden" asp-for="@item.Id" />
+                                        <p class="ml-2 cursor-pointer text-red-500 hover:underline">Delete</p>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 </section>

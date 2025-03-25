@@ -6,7 +6,10 @@ module.exports = {
         './Views/**/*.cshtml',
         './**/*.cshtml',
         './**/*.js',
-        './**/*.ts'
+        './**/*.ts',
+        "./Views/**/*.cshtml", // Inclui todas as views do MVC
+        "./Views/**/*.cshtml",
+        "./wwwroot/js/**/*.js"
     ], // Inclua os arquivos onde Tailwind será usado
     theme: {
         extend: {},
